@@ -1,0 +1,22 @@
+<?php
+// Cole este método dentro do seu EventoController (ou PerguntaController).
+
+use App\Models\Pergunta;
+
+public function destroyPergunta(Pergunta $pergunta)
+{
+    $this->authorize('delete', $pergunta);
+
+    $pergunta->delete();
+
+    return back()->with('success', 'Pergunta excluída com sucesso.');
+}
+
+// Se o controller base não tiver o trait, adicione em app/Http/Controllers/Controller.php:
+//
+// use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+//
+// abstract class Controller
+// {
+//     use AuthorizesRequests;
+// }

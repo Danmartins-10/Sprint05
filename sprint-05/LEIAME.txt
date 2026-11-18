@@ -1,0 +1,11 @@
+Sprint 05 - Protecao da entidade Pergunta
+
+1. resources/views/components/danger-button.blade.php  -> copie para o projeto
+2. app/Policies/PerguntaPolicy.php                      -> copie para o projeto
+   (Pergunta precisa do relacionamento evento(): belongsTo(Evento::class))
+   (Laravel < 11: registre a policy em AuthServiceProvider)
+3. app/Http/Controllers/EventoController_destroyPergunta.php.txt -> cole o metodo no controller
+4. resources/views/eventos/show_trecho.blade.php        -> cole o trecho em eventos/show.blade.php
+
+Ajuste nomes de rota/campos (texto, perguntas.destroy) conforme seu projeto.
+Teste: php artisan test --filter=AuthZTest
